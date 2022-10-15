@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao)Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Bucin</title>
+</head>
+<body>
+    <div class='position-absolute top-50 start-50 translate-middle'>
+        <button id='button' class='btn btn-primary btn-lg' onclick='mulai()'>Click Here!</button>
+        <!-- <div id='iloveyou' style='display: none;'>
+            <h2 class='text-center'>Aku Sayang Kamu<br>&#10084;&#65039;</h2>
+        </div> -->
+        <style>
+
+            :root {
+              --penguin-size: 500px;
+              --penguin-skin: black;
+              --penguin-belly: white;
+              --penguin-beak: orange;
+            }
+          
+            .penguin {
+              position: relative;
+              margin: auto;
+              margin-top: 5%;
+              width: var(--penguin-size, 100%);
+              height: var(--penguin-size, 300px);
+            }
+          
+            .right-cheek {
+              top: 15%;
+              left: 35%;
+              background: var(--penguin-belly, white);
+              width: 60%;
+              height: 70%;
+              border-radius: 70% 70% 60% 60%;
+            }
+          
+            .left-cheek {
+              top: 15%;
+              left: 5%;
+              background: var(--penguin-belly, white);
+              width: 60%;
+              height: 70%;
+              border-radius: 70% 70% 60% 60%;
+            }
+          
+            .belly {
+              top: 60%;
+              left: 2.5%;
+              background: var(--penguin-belly, white);
+              width: 95%;
+              height: 100%;
+              border-radius: 120% 120% 100% 100%;
+            }
+          
+            .penguin-top {
+              top: 10%;
+              left: 25%;
+              background: var(--penguin-skin, gray);
+              width: 50%;
+              height: 45%;
+              border-radius: 70% 70% 60% 60%;
+            }
+          
+            .penguin-bottom {
+              top: 40%;
+              left: 23.5%;
+              background: var(--penguin-skin, gray);
+              width: 53%;
+              height: 45%;
+              border-radius: 70% 70% 100% 100%;
+            }
+          
+            .right-hand {
+              top: 5%;
+              left: 25%;
+              background: var(--penguin-skin, black);
+              width: 30%;
+              height: 60%;
+              border-radius: 30% 30% 120% 30%;
+              transform: rotate(130deg);
+              z-index: -1;
+              animation-duration: 3s;
+              animation-name: wave;
+              animation-iteration-count: infinite;
+              transform-origin:0% 0%;
+              animation-timing-function: linear;
+            }
+          
+            @keyframes wave {
+                10% {
+                  transform: rotate(110deg);
+                }
+                20% {
+                  transform: rotate(130deg);
+                }
+                30% {
+                  transform: rotate(110deg);
+                }
+                40% {
+                  transform: rotate(130deg);
+                }
+              }
+          
+            .left-hand {
+              top: 0%;
+              left: 75%;
+              background: var(--penguin-skin, gray);
+              width: 30%;
+              height: 60%;
+              border-radius: 30% 30% 30% 120%;
+              transform: rotate(-45deg);
+              z-index: -1;
+            }
+          
+            .right-feet {
+              top: 85%;
+              left: 60%;
+              background: var(--penguin-beak, orange);
+              width: 15%;
+              height: 30%;
+              border-radius: 50% 50% 50% 50%;
+              transform: rotate(-80deg);
+              z-index: -2222;
+            }
+          
+            .left-feet {
+              top: 85%;
+              left: 25%;
+              background: var(--penguin-beak, orange);
+              width: 15%;
+              height: 30%;
+              border-radius: 50% 50% 50% 50%;
+              transform: rotate(80deg);
+              z-index: -2222;
+            }
+          
+            .right-eye {
+              top: 45%;
+              left: 60%;
+              background: black;
+              width: 15%;
+              height: 17%;
+              border-radius: 50%;
+            }
+          
+            .left-eye {
+              top: 45%;
+              left: 25%;
+              background: black;
+              width: 15%;
+              height: 17%;
+              border-radius: 50%;
+            }
+          
+            .sparkle {
+              top: 25%;
+              left:-23%;
+              background: white;
+              width: 150%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          
+            .blush-right {
+              top: 65%;
+              left: 15%;
+              background: pink;
+              width: 15%;
+              height: 10%;
+              border-radius: 50%;
+            }
+          
+            .blush-left {
+              top: 65%;
+              left: 70%;
+              background: pink;
+              width: 15%;
+              height: 10%;
+              border-radius: 50%;
+            }
+          
+            .beak-top {
+              top: 60%;
+              left: 40%;
+              background: var(--penguin-beak, orange);
+              width: 20%;
+              height: 10%;
+              border-radius: 50%;
+            }
+          
+            .beak-bottom {
+              top: 65%;
+              left: 42%;
+              background: var(--penguin-beak, orange);
+              width: 16%;
+              height: 10%;
+              border-radius: 50%;
+            }
+          
+            body {
+              background:salmon;
+            }
+          
+            .penguin * {
+              position: absolute;
+            }
+          </style>
+          <div class="penguin" id="penguin" style="display: none;">
+            <div class="penguin-bottom">
+              <div class="right-hand"></div>
+              <div class="left-hand"></div>
+              <div class="right-feet"></div>
+              <div class="left-feet"></div>
+            </div>
+            <div class="penguin-top">
+              <div class="right-cheek"></div>
+              <div class="left-cheek"></div>
+              <div class="belly"></div>
+              <div class="right-eye">
+                <div class="sparkle"></div>
+              </div>
+              <div class="left-eye">
+                <div class="sparkle"></div>
+              </div>
+              <div class="blush-right"></div>
+              <div class="blush-left"></div>
+              <div class="beak-top"></div>
+              <div class="beak-bottom"></div>
+            </div>
+          </div>
+    </div>
+    <span id='hati' class='fixed-bottom text-center my-3' onclick='hati()'></span>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript">
+        const author = 'Faizz';
+        document.getElementById('hati').innerHTML = `Made with &#10084;&#65039; by ${author}`;
+        const swals = Swal.mixin({
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
+        });
+        async function mulai(){
+            await swals.fire('Halo Geys', 'Aku ada pertanyaan nih buat kamu', 'question');
+            await swals.fire('Jawab yang jujur ya!');
+            await swals.fire('Awas aja kalo boong!!', '', 'error');
+            var { value: nama } = await swals.fire({
+                title: 'Masukin nama kamu dulu',
+                input: 'text',
+                showCancelButton: true,
+            });
+            if(nama){
+                var { isConfirmed: sayang } = await swals.fire({
+                    title: `${nama} capee ga?`,
+                    confirmButtonText: 'Cape',
+                    cancelButtonText: 'Gak',
+                    showCancelButton: true,
+                });
+            if(sayang){
+                await swals.fire('Aku juga cape weeyy');
+                var { value: persen } = await swals.fire({
+                    title: 'Seberapa cape emangnya?',
+                    icon: 'question',
+                    input: 'range',
+                    inputLabel: 'Antara 1-100 ya',
+                    inputAttributes: {
+                        min: 1,
+                        max: 100,
+                    },
+                    inputValue: 50
+                });
+                if(persen){
+                    await swals.fire(`Aduh Kasian capee ${persen}%`);
+                    var { isConfirmed: kangen } = await swals.fire({
+                        title: 'Sekarang anda istirahat??',
+                        confirmButtonText: 'Iya',
+                        cancelButtonText: 'Gak!',
+                        showCancelButton: true,
+                    });
+                    if(kangen){
+                        await swals.fire('Huhu kasian cape :(');
+                        await swals.fire('Terakhir deh');
+                        await swals.fire('Coba klik ikon hati di palingbawah dong');
+                    }else{
+                        //gak kangen
+                    }
+                }
+            }else{
+                //gak sayang
+            }
+            } else {
+                //gak isi nama
+            }
+        }
+        function hati(){
+            document.getElementById('button').style = 'display: none';
+            document.getElementById('penguin').style = '';
+        }
+    </script>
+</body>
+</html>
